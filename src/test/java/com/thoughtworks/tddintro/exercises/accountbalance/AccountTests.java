@@ -1,6 +1,5 @@
 package com.thoughtworks.tddintro.exercises.accountbalance;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -26,8 +25,11 @@ public class AccountTests {
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal(){
 
+        Account account = new Account();
+        account.deposit(500.0);
+        account.withdraw(600.0);
+        assertThat(account.getBalance(), is(500.0));
     }
 }
