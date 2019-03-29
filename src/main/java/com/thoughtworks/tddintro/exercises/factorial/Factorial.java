@@ -2,9 +2,11 @@ package com.thoughtworks.tddintro.exercises.factorial;
 
 public class Factorial {
     public Integer compute(int i) {
-        if (i == 0) {
-            return 1;
+
+        int result = 1;
+        for (int index = 2; index <= i; index++) {
+            result = result * index;
         }
-        return i;
+        return result;
     }
 }
